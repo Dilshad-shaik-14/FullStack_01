@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import authService from '../appwrite/auth'
 import {Link ,useNavigate} from 'react-router-dom'
 import {login} from '../store/authSlice'
-import {Button, Input, Logo} from './index.js'
+import {Button, Input} from './index.js'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
+import image from "../assets/undraw_sign-up_z2ku.png"
 
 function Signup() {
     const navigate = useNavigate()
@@ -84,7 +85,7 @@ function Signup() {
                     </div>
                 </div>
                 <div className="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img className="w-96 py-10" src="src\assets\undraw_sign-up_z2ku.png" alt="image1" />
+                    <img className="w-96 py-10" src={image} alt="image1" />
                 </div>
             </aside>
 

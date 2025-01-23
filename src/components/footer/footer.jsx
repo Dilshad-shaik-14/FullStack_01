@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Logo from '../Logo';
 
 function Footer() {
   const status = useSelector((state) => state.auth.status);

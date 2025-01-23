@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
-import {Button, Input, Logo} from "./index"
-import {useDispatch , useSelector} from "react-redux"
+import {Button, Input} from "./index"
+import {useDispatch} from "react-redux"
 import authService from "../appwrite/auth"
 import {useForm} from "react-hook-form"
+import undraw_login_wqkt from "../assets/undraw_login_wqkt.png"
 
 function Login() {
     const navigate = useNavigate()
@@ -77,7 +78,7 @@ function Login() {
                     </div>
                 </div>
                 <div className="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img className="w-96 py-10" src="src\assets\undraw_login_wqkt.png" alt="image1" />
+                    <img className="w-96 py-10" src={undraw_login_wqkt} alt="image1" />
                 </div>
             </aside>
         </div>
