@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import vehicles from "./assets/vehicles.jpg"
 
 const ImageWithTextAnimation = () => {
   return (
     <div className="relative inline-block w-full">
       <img
-        src="src/assets/vehicles.jpg"
+        src={vehicles}
         alt="Sample"
         className="px-9 w-full h-[600px] object-cover block"
       />
