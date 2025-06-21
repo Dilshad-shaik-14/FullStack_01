@@ -44,10 +44,12 @@ function AllPosts() {
             data.status = "inactive",
             data.content = "profile Photo"
             
-
-            const dbPost = await appwriteService.createPost({ ...data, userid: userData.$id });
-
-           
+            await appwriteService.createPost({ ...data, userid: userData.$id });
+            // Refetch posts to update profile image immediately
+            const updatedPosts = await appwriteService.getPostsByUser(userData.$id);
+            if (updatedPosts.documents) {
+                setPosts(updatedPosts.documents);
+            }
         }
     };
     
@@ -62,7 +64,7 @@ function AllPosts() {
                                     <label className="cursor-pointer">
                                         {!state && (<input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />)}
                                         {pic ? (
-                                            <img src={appwriteService.getFilePreview(pic)}  className="w-40 h-40 object-cover rounded-full border-2 border-gray-300" />):(
+                                            <img src={appwriteService.getFileView(pic)}  className="w-40 h-40 object-cover rounded-full border-2 border-gray-300" />):(
                                                 <img src={profilePhoto}  className="w-40 h-40 object-cover rounded-full border-2 border-gray-300" />
                                             )}
                                     </label>

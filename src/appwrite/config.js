@@ -7,6 +7,7 @@ export class Service{
     bucket;
     
     constructor(){
+        // Ensure setProject is only called once to avoid duplicate project query params
         this.client
         .setEndpoint(conf.appwriterUrl)
         .setProject(conf.appwriterProjectId);
@@ -127,6 +128,13 @@ export class Service{
 
     getFilePreview(fileId){
         return this.bucket.getFilePreview(
+            conf.appwriterBucketId,
+            fileId
+        )
+    }
+
+    getFileView(fileId){
+        return this.bucket.getFileView(
             conf.appwriterBucketId,
             fileId
         )

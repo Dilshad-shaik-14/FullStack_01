@@ -78,13 +78,17 @@ export default function PostForm({ post }) {
                 />
                 <div className="w-full">
                     {post && (
-                        <div className="w-full mb-4">
-                            <img
-                                src={appwriteService.getFilePreview(post.featuredimages)}
-                                alt={post.title}
-                                className="rounded-lg"
-                            />
-                        </div>
+                        <>
+                            {console.log('EditForm featuredimages:', post.featuredimages)}
+                            {console.log('EditForm viewUrl:', appwriteService.getFileView(post.featuredimages))}
+                            <div className="w-full mb-4">
+                                <img
+                                    src={appwriteService.getFileView(post.featuredimages)}
+                                    alt={post.title}
+                                    className="rounded-lg"
+                                />
+                            </div>
+                        </>
                     )}
                     <Select
                         options={["active", "inactive"]}
