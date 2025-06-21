@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <div className="w-full bg-white text-black">
             <Container>
-                <h1 className='text-2xl text-left text-bold '>Latest Collection  </h1>
+                <h1 className='text-2xl text-left text-bold-4x1 '>Latest Collection  </h1>
                 <div className="flex flex-wrap ">
                     <div className='w-full'>
                     </div>
