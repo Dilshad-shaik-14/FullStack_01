@@ -32,21 +32,22 @@ const Home = () => {
 
     return (
         <>
-        <div className="hidden md:flex justify-center py-20">
+        {/* Hide animation on xs, show on md+ */}
+        <div className="hidden md:flex justify-center py-10">
             <ImageWithTextAnimation className="object-fit" />
         </div>
-        <div className="w-full min-h-screen bg-white text-black py-10">
+        <div className="w-full min-h-screen bg-white text-black py-4 sm:py-8">
             <Container>
-                <h1 className='text-4xl md:text-5xl font-extrabold mb-12 text-left tracking-tight text-black drop-shadow-lg'>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-10 text-left tracking-tight text-black drop-shadow-lg'>
                     Latest Collection
                 </h1>
-                <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                    <div className="columns-1 sm:columns-2 md:columns-2 lg:columns-3 [column-gap:2.5rem]">
+                <div className="max-w-full sm:max-w-7xl mx-auto px-2 sm:px-4">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                         {posts.map((post, idx) => (
                             <div
                                 key={post.$id}
-                                className={`break-inside-avoid mb-8 bg-white border border-gray-200 rounded-3xl shadow-lg 
-                                    hover:shadow-2xl hover:-translate-y-2 hover:border-black transition-all duration-300 p-8 flex flex-col
+                                className={`bg-white border border-gray-200 rounded-2xl shadow-md 
+                                    hover:shadow-xl hover:-translate-y-1 hover:border-black transition-all duration-300 p-4 sm:p-6 flex flex-col
                                     opacity-0 animate-fade-in`}
                                 style={{ animationDelay: `${idx * 60}ms`, animationFillMode: 'forwards' }}
                             >
